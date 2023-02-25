@@ -419,7 +419,6 @@ font: 75 11pt &quot;MS Shell Dlg 2&quot;;</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>Sujith.gif</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>

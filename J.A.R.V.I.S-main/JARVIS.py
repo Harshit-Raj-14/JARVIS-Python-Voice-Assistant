@@ -55,7 +55,6 @@ class MainThread(QThread):
             listener = sr.Recognizer()
             with sr.Microphone() as source:
 
-                self.talk('Hello boss I am jarvis your assistant. Please tell me how can I help you')
                 print('Listening....')
                 listener.pause_threshold = 1
                 voice = listener.listen(source,timeout=4,phrase_time_limit=7)
@@ -71,7 +70,7 @@ class MainThread(QThread):
 
     def run_jarvis(self):
         self.wish()
-        self.talk('Hello boss I am jarvis your assistant. Please tell me how can I help you')
+        self.talk('Hello boss I am jarvis your AI assistant. Please tell me how can I help you?')
         while True:
             self.command = self.take_Command() 
             print(self.command)
@@ -597,13 +596,13 @@ class MainThread(QThread):
     def shedule(self):
         day = self.Cal_day().lower()
         self.talk("Boss today's shedule is")
-        Week = {"monday" : "Boss from 9:00 to 9:50 you have Cultural class, from 10:00 to 11:50 you have mechanics class, from 12:00 to 2:00 you have brake, and today you have sensors lab from 2:00",
-        "tuesday" : "Boss from 9:00 to 9:50 you have English class, from 10:00 to 10:50 you have break,from 11:00 to 12:50 you have ELectrical class, from 1:00 to 2:00 you have brake, and today you have biology lab from 2:00",
-        "wednesday" : "Boss today you have a full day of classes from 9:00 to 10:50 you have Data structures class, from 11:00 to 11:50 you have mechanics class, from 12:00 to 12:50 you have cultural class, from 1:00 to 2:00 you have brake, and today you have Data structures lab from 2:00",
-        "thrusday" : "Boss today you have a full day of classes from 9:00 to 10:50 you have Maths class, from 11:00 to 12:50 you have sensors class, from 1:00 to 2:00 you have brake, and today you have english lab from 2:00",
-        "friday" : "Boss today you have a full day of classes from 9:00 to 9:50 you have Biology class, from 10:00 to 10:50 you have data structures class, from 11:00 to 12:50 you have Elements of computing class, from 1:00 to 2:00 you have brake, and today you have Electronics lab from 2:00",
-        "saturday" : "Boss today you have a full day of classes from 9:00 to 11:50 you have maths lab, from 12:00 to 12:50 you have english class, from 1:00 to 2:00 you have brake, and today you have elements of computing lab from 2:00",
-        "sunday":"Boss today is holiday but we can't say anything when they will bomb with any assisgnments"}
+        Week = {"monday" : "6:00 AM - Wake up, shower, and get dressed 7:00 AM - Breakfast 8:00 AM - Commute to work/school 9:00 AM - Work/school 12:00 PM - Lunch break 1:00 PM - Work/school 5:00 PM - Commute back home 6:00 PM - Exercise or other physical activity 7:00 PM - Dinner 8:00 PM - Spend time with family/friends or pursue hobbies 10:00 PM - Wind down and prepare for bed 11:00 PM - Sleep",
+        "tuesday" : "6:00 AM - Wake up, shower, and get dressed 7:00 AM - Breakfast 8:00 AM - Work/school 12:00 PM - Lunch break 1:00 PM - Work/school 5:00 PM - Commute back home 6:00 PM - Volunteer work or community service 7:00 PM - Dinner 8:00 PM - Relaxation or pursue hobbies 10:00 PM - Wind down and prepare for bed 11:00 PM - Sleep",
+        "wednesday" : "6:00 AM - Wake up, shower, and get dressed 7:00 AM - Breakfast 8:00 AM - Work/school 12:00 PM - Lunch break 1:00 PM - Work/school 5:00 PM - Commute back home 6:00 PM - Attend a class or take an online course 7:00 PM - Dinner 8:00 PM - Spend time with family/friends or pursue hobbies 10:00 PM - Wind down and prepare for bed 11:00 PM - Sleep",
+        "thrusday" : "6:00 AM - Wake up, shower, and get dressed 7:00 AM - Breakfast 8:00 AM - Work/school 12:00 PM - Lunch break 1:00 PM - Work/school 5:00 PM - Commute back home 6:00 PM - Socialize with friends/family 8:00 PM - Dinner 9:00 PM - Watch a movie or go to a concert/show 11:00 PM - Wind down and prepare for bed 12:00 AM - Sleep",
+        "friday" : "6:00 AM - Wake up, shower, and get dressed 7:00 AM - Breakfast 8:00 AM - Work/school 12:00 PM - Lunch break 1:00 PM - Work/school 5:00 PM - Commute back home 6:00 PM - Socialize with friends/family 8:00 PM - Dinner 9:00 PM - Watch a movie or go to a concert/show 11:00 PM - Wind down and prepare for bed 12:00 AM - Sleep",
+        "saturday" : "8:00 AM - Wake up and have a leisurely breakfast 9:00 AM - Exercise or other physical activity 10:00 AM - Pursue hobbies or attend to personal projects 12:00 PM - Lunch 1:00 PM - Socialize with friends/family 6:00 PM - Dinner 7:00 PM - Attend a cultural event or go out with friends 11:00 PM - Wind down and prepare for bed 12:00 AM - Sleep",
+        "sunday":"Boss today is holiday but we can't say anything when they will bomb you with any assisgnments."}
         if day in Week.keys():
             self.talk(Week[day])
 
@@ -618,9 +617,9 @@ class MainThread(QThread):
         elif 'outlook' in command:
             self.talk('opening your microsoft school outlook')
             webbrowser.open('https://outlook.office.com/mail/')
-        elif 'amrita portal' in command:
-            self.talk('opening your amrita university management system')
-            webbrowser.open('https://aumsam.amrita.edu/')
+        elif 'vtop portal' in command:
+            self.talk('opening your vit university management system')
+            webbrowser.open('https://vtop.vitbhopal.ac.in/vtop/initialProcess/')
         elif 'octave' in command:
             self.talk('opening Octave online')
             webbrowser.open('https://octave-online.net/')
@@ -633,9 +632,6 @@ class MainThread(QThread):
         if("java" in command):
             self.talk('opening DSA class in teams')
             webbrowser.open("https://teams.microsoft.com/java")
-        elif("mechanics" in command):
-            self.talk('opening mechanics class in teams')
-            webbrowser.open("https://teams.microsoft.com/mechanics")
         elif 'online classes' in command:
             self.talk('opening your microsoft teams')
             webbrowser.open('https://teams.microsoft.com/')
@@ -795,31 +791,31 @@ class MainThread(QThread):
     def CloseApp(self,command):
         print(command)
         if ('calculator'in command) :
-            self.talk("okay boss, closeing caliculator")
+            self.talk("okay boss, closeing calculator")
             os.system("taskkill /f /im calc.exe")
         elif ('paint'in command) :
-            self.talk("okay boss, closeing mspaint")
+            self.talk("okay boss, closing mspaint")
             os.system("taskkill /f /im mspaint.exe")
         elif ('notepad'in command) :
-            self.talk("okay boss, closeing notepad")
+            self.talk("okay boss, closing notepad")
             os.system("taskkill /f /im notepad.exe")
         elif ('discord'in command) :
-            self.talk("okay boss, closeing discord")
+            self.talk("okay boss, closing discord")
             os.system("taskkill /f /im Discord.exe")
         elif ('editor'in command) :
-            self.talk("okay boss, closeing vs code")
+            self.talk("okay boss, closing vs code")
             os.system("taskkill /f /im Code.exe")
         elif ('spotify'in command) :
-            self.talk("okay boss, closeing spotify")
+            self.talk("okay boss, closing spotify")
             os.system("taskkill /f /im Spotify.exe")
         elif ('lt spice'in command) :
-            self.talk("okay boss, closeing lt spice")
+            self.talk("okay boss, closing lt spice")
             os.system("taskkill /f /im XVIIx64.exe")
         elif ('steam'in command) :
-            self.talk("okay boss, closeing steam")
+            self.talk("okay boss, closing steam")
             os.system("taskkill /f /im steam.exe")
         elif ('media player'in command) :
-            self.talk("okay boss, closeing media player")
+            self.talk("okay boss, closing media player")
             os.system("taskkill /f /im vlc.exe")
         else :
             self.No_result_found()
@@ -843,7 +839,7 @@ class MainThread(QThread):
         pdfReader = PyPDF2.PdfFileReader(book_n)
         pages = pdfReader.numPages
         self.talk(f"Boss there are total of {pages} in this book")
-        self.talk("plsase enter the page number Which I nedd to read")
+        self.talk("please enter the page number which I nedd to read for you")
         num = int(input("Enter the page number: "))
         page = pdfReader.getPage(num)
         text = page.extractText()
@@ -882,7 +878,7 @@ class MainThread(QThread):
         try:
             self.talk("what should I say?")
             content = self.take_Command()
-            self.talk("To whom do u want to send the email?")
+            self.talk("To whom do you want to send the email?")
             to = self.take_Command()
             self.SendEmail(to,content)
             self.talk("Email has been sent to "+str(to))
@@ -916,7 +912,7 @@ class MainThread(QThread):
             latidute = geo_data['latitude']
             org = geo_data['organization_name']
             print(city+" "+state+" "+country+" "+tZ+" "+longitude+" "+latidute+" "+org)
-            self.talk(f"Boss I am not sure, but I think we are in {city} city of {state} state of {country} country")
+            self.talk(f"Boss we are in {city} city of {state} state of {country} country")
             self.talk(f"and boss, we are in {tZ} timezone the latitude os our location is {latidute}, and the longitude of our location is {longitude}, and we are using {org}\'s network ")
         except Exception as e:
             self.talk("Sorry boss, due to network issue I am not able to find where we are.")
@@ -943,7 +939,7 @@ class MainThread(QThread):
         time.sleep(3)
         img = pyautogui.screenshot()
         img.save(f"{name}.png")
-        self.talk("I am done boss, the screenshot is saved in main folder.")
+        self.talk("I am done boss, the screenshot is saved in the main folder.")
 
     def news(self):
         MAIN_URL_= "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=YOUR_NEWS_API_KEY"
