@@ -31,7 +31,16 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 from PyQt5.uic import loadUiType
-from JarvisUi import Ui_JarvisUI
+from JarvisGUI import Ui_JarvisUi
+from state import state
+import cv2
+import random
+from requests import get
+import smtplib
+import psutil
+from datetime import datetime as date
+
+
 from state import state
 import cv2
 import random
@@ -184,8 +193,8 @@ class MainThread(QThread):
             elif("display all the contacts" in self.command):
                 self.Display()
 
-            elif ("covid" in self.command) or  ("corona" in self.command):
-                self.talk("Boss which state covid 19 status do you want to check")
+            elif ("covid" in self.command) or  ("corona" in self.command) or  ("corona updates" in self.command):
+                self.talk("Boss which state covid 19 status do you want to check?")
                 s = self.take_Command()
                 self.Covid(s)
 
@@ -248,14 +257,14 @@ class MainThread(QThread):
                 self.talk("boss, I am not sleeping, I am in online, what can I do for u")
 
             elif ("goodbye" in self.command) or ("get lost" in self.command):
-                self.talk("Thanks for using me boss, have a good day")
+                self.talk("Thanks for using me boss, have a good day.")
                 sys.exit()
 
             elif ('system condition' in self.command) or ('condition of the system' in self.command):
                 self.talk("checking the system condition")
                 self.condition()
 
-            elif ('tell me news' in self.command) or ("the news" in self.command) or ("todays news" in self.command):
+            elif ('tell me news' in self.command) or ("tell me today's news" in self.command) or ("the news" in self.command) or ("todays news" in self.command):
                 self.talk("Please wait boss, featching the latest news")
                 self.news()
 
@@ -942,7 +951,7 @@ class MainThread(QThread):
         self.talk("I am done boss, the screenshot is saved in the main folder.")
 
     def news(self):
-        MAIN_URL_= "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=YOUR_NEWS_API_KEY"
+        MAIN_URL_= "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=7ca0f6d986024269b3392a430cc19314"
         MAIN_PAGE_ = get(MAIN_URL_).json()
         articles = MAIN_PAGE_["articles"]
         headings=[]
@@ -975,58 +984,87 @@ class MainThread(QThread):
 startExecution = MainThread()
 class Main(QMainWindow):
     cpath =""
-
+##############################################################
     def __init__(self,path):
         self.cpath = path
         super().__init__()
-        self.ui = Ui_JarvisUI(path=current_path)
+        self.ui = Ui_JarvisUi()#(path=current_path)
         self.ui.setupUi(self)
-        self.ui.pushButton_4.clicked.connect(self.startTask)
-        self.ui.pushButton_3.clicked.connect(self.close)
+        self.ui.pushButton_start.clicked.connect(self.startTask)
+        self.ui.pushButton_exit.clicked.connect(self.close)
+        self.ui.pushButton_chrome.clicked.connect(self.chrome_app)
+        self.ui.pushButton_whatsapp.clicked.connect(self.whatsapp_app)
+        self.ui.pushButton_youtube.clicked.connect(self.youtube_app)
+    
+    def chrome_app(self):
+        os.startfile("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe")
+    
+    def youtube_app(self):
+        webbrowser.open("https://www.youtube.com/")
+    
+    def whatsapp_app(self):
+        webbrowser.open("https://web.whatsapp.com/")
+
+
+
 
     def startTask(self):
 
-        self.ui.movie = QtGui.QMovie(rf"{self.cpath}\UI\ringJar.gif")
-        self.ui.label_3.setMovie(self.ui.movie)
+        self.ui.movie = QtGui.QMovie(rf"{self.cpath}\bg\ironmanwoo.gif")
+        self.ui.gif_1.setMovie(self.ui.movie)
         self.ui.movie.start()
-        self.ui.movie = QtGui.QMovie(rf"{self.cpath}\UI\circle.gif")
-        self.ui.label_4.setMovie(self.ui.movie)
+        self.ui.movie = QtGui.QMovie(rf"{self.cpath}\extraGui\Hero_Template.gif")
+        self.ui.gif_2.setMovie(self.ui.movie)
         self.ui.movie.start()
-        self.ui.movie = QtGui.QMovie(rf"{self.cpath}\UI\lines1.gif")
-        self.ui.label_7.setMovie(self.ui.movie)
+        self.ui.movie = QtGui.QMovie(rf"{self.cpath}\extraGui\Earth.gif")
+        self.ui.gif_4.setMovie(self.ui.movie)
         self.ui.movie.start()
+        self.ui.movie = QtGui.QMovie(rf"{self.cpath}\voiceReg\Aqua.gif")
+        self.ui.gif_3.setMovie(self.ui.movie)
+        self.ui.movie.start()
+        self.ui.movie = QtGui.QMovie(rf"{self.cpath}\bg\voicegrf.gif")
+        self.ui.gif_5.setMovie(self.ui.movie)
+        self.ui.movie.start()
+        IP_Address = get('https://api.ipify.org').text
+        url = 'https://get.geojs.io/v1/ip/geo/'+IP_Address+'.json'
+        geo_reqeust = get(url)
+        geo_data = geo_reqeust.json()
+        city = geo_data['city']
+        search = f"temperature in {city}"
+        url_1 = f"https://www.google.com/search?q={search}"
+        r = get(url_1)
+        data = BeautifulSoup(r.text,"html.parser")
+        temp = data.find("div",class_="BNeawe").text
+        self.ui.Text_Temperature.setText(temp)
+        self.ui.Text_Day.setText(date.today().strftime("%A"))
+        
+        
 
-        self.ui.label_8.setMovie(self.ui.movie)
-        self.ui.movie.start()
-        self.ui.movie = QtGui.QMovie(rf"{self.cpath}\UI\circle.gif")
-        self.ui.label_9.setMovie(self.ui.movie)
-        self.ui.movie.start()
-
-        self.ui.label_12.setMovie(self.ui.movie)
-        self.ui.movie.start()
-
-        self.ui.label_13.setMovie(self.ui.movie)
-        self.ui.movie.start()
-
-        self.ui.label_16.setMovie(self.ui.movie)
-        self.ui.movie.start()
-        self.ui.label_17.setMovie(self.ui.movie)
-        self.ui.movie.start()
+        
+###################
+        
+#################################
         timer = QTimer(self)
         timer.timeout.connect(self.showTime)
         timer.start(1000)
         startExecution.start()
+
 
     def showTime(self):
         current_time = QTime.currentTime()
         current_date = QDate.currentDate()
         label_time = current_time.toString('hh:mm:ss')
         label_date = current_date.toString(Qt.ISODate)
-        self.ui.textBrowser.setText(label_date)
-        self.ui.textBrowser_2.setText(label_time)
+        self.ui.Text_Date.setText(label_date)
+        self.ui.Text_Time.setText(label_time)
+        
+        
+        
 
 current_path = os.getcwd()
 app = QApplication(sys.argv)
+
 jarvis = Main(path=current_path)
 jarvis.show()
 exit(app.exec_())
+        
