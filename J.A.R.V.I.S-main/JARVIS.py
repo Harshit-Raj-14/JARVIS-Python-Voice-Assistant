@@ -1,4 +1,5 @@
 import sys
+from sys import exit
 import speech_recognition as sr
 import pyttsx3
 import pywhatkit
@@ -39,8 +40,6 @@ from requests import get
 import smtplib
 import psutil
 from datetime import datetime as date
-
-
 from state import state
 import cv2
 import random
