@@ -1,48 +1,4 @@
-# Convert .py to .exe
-
-## Jarvis Application
-The following will tell you how to conver the python code to an executable .exe file on your OS system.
-
-### How to convert a `.py` to `.exe` file
-
-1. Go to the Project directory.
-2. Make sure you have `pyinstaller` is installed.
-3. Run the following command in the terminal, (This will take time, be patience).
-
-    ```
-    pyinstaller --onefile JARVIS.py
-    ```
-4. A folder named `dist` will be created in the project directory, you can find the `JARVIS.exe` file in it.
-
-This will make a completely runnable .exe file for jarvis.
-
-
-
-
-
-
-
-
-
-
-
-
-
-# <p align="center"><img src="Images/ReadmeHeader.gif" alt="JARVIS" width="100%"/></a></p>
-
-<p align="center"> 
-  <img src="https://img.shields.io/github/stars/BolisettySujith/J.A.R.V.I.S.svg" alt="BolisettySujith" /> 
-  <img src="https://img.shields.io/github/forks/BolisettySujith/J.A.R.V.I.S.svg" alt="BolisettySujith" /> 
-</p>
-
-
-<p align="center"> 
-  <img src="https://img.shields.io/github/issues/BolisettySujith/J.A.R.V.I.S.svg" alt="BolisettySujith" /> 
-  <img src="https://img.shields.io/github/contributors/BolisettySujith/J.A.R.V.I.S.svg" alt="Contrinutors" /> 
-  <img src="https://img.shields.io/github/license/BolisettySujith/J.A.R.V.I.S.svg" alt="License" /> 
-</p>
-
-## Introduction 👨‍💻
+# Introduction 👨‍💻
 It is a voice assistant which can be used to interact with your computer and also you have been seeing it in Iron man movies, but this JARVIS is not that much advanced as shown in movies. 
 
 ### Built with: Python<img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png" alt="Python" height="40" style="vertical-align:top">
@@ -143,25 +99,7 @@ To run this project you should need some API key's for reading news, for finding
 
 That's it **#Enjoy** speaking with your computer friend 😁
 
-Demo video for ***JARVIS*** is available [here](https://docs.google.com/presentation/d/14w4dQUpqVOmGvAXEn8vYkHQUmMYU72wIb-AK0SWCWYk/edit?usp=sharing)
-
 ## FINAL GUI of JARVIS😎
-<p align="center"><img src="Images/JAR.gif" alt="JARVIS" width="75%"/></a></p>
 
-> Note: For any errors while installing the python modules refer [**```ERRORS.md```**](https://github.com/BolisettySujith/J.A.R.V.I.S/blob/main/ERRORS/ERRORS.md) because I got some errors while installing and using them.
 
-## Motivation for this project🙃
-Due to covid19 in my house I'm in a seperate room, without talking with anyone, so thought to talk with my laptop which I will use everyday, and came up with this project.
 
-## How to Contribute 🤔
-
-To contribute to this project please read the [CONTRITUTING.md](https://github.com/BolisettySujith/J.A.R.V.I.S/blob/main/CONTRIBUTING.md) file.
-
-## Want to run JARVIS as an Application?
-Read [this](https://github.com/BolisettySujith/J.A.R.V.I.S/blob/main/py2exe.md), to convert a .`py` file to `.exe` file. 
-
-## Future plans😇
-
-In the present JARVIS GUI we cannot see the commands running but they are visible on the terminal, so plan to bring up the commands to display on the GUI.
-
-If you like the repository **```FORK && clone```** 🍴 the repository, start using JARVIS, and don't forget to **⭐** the repository.
