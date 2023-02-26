@@ -1,0 +1,273 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito);
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap');
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: 'Arvo', serif;
+  background-color: #000;
+}
+
+.container {
+  background: #111111;
+  color: #fff;
+  width: 100%;
+
+}
+
+a {
+  text-decoration: none;
+  color: #111111;
+  padding-left: 5px;
+  margin-top: 5px;
+  padding-top: 5px;
+}
+
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+a:focus {
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav {
+  height: 60px;
+  padding-bottom: 15px;
+  position: fixed !important;;
+  top: 0;
+  width: 100%;
+  margin-top: 0;
+  padding-top: 0;
+
+}
+
+.btn{
+  margin-right: 15px;;
+}
+
+.buttons {
+  margin-right: 10px;
+  background-color: var(--themeRed);
+  border: 0;
+  outline: none;
+  color: #fff;
+  padding: 15px 15px;
+  margin-top: 20px;
+  margin-left: 0px;
+  font-size: 18px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+img {
+  height: 30px;
+  margin-right: 15px;
+}
+
+.heade p{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 58%;
+  font-size: 1.4rem;
+}
+
+/* ///////////////////////////////// */
+
+
+:root {
+  --themeRed: #000000;
+  /* #e43a47 */
+  --gray: #efefef;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+p {
+  font-size: 20px;
+  line-height: 30px;
+  color: black;
+}
+
+.fullContainer {
+  width: 100%;
+}
+
+.container {
+  width: 11400px;
+  margin: auto;
+}
+
+.sectionTitle {
+  width: 300px;
+  border-bottom: 3px solid var(--themeRed);
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  /* margin: 0px auto 50px; */
+  position: relative;
+  padding: 8px;
+  text-transform: uppercase;
+}
+
+.sectionTitle::after {
+  /*its for the triangle in between the underline of about us  */
+  display: inline-block;
+  content: "";
+  height: 15px;
+  width: 15px;
+  background-color: var(--themeRed);
+  position: absolute;
+  left: calc((50% - 10px));
+  top: calc(75% - 7px);
+  transform: rotate(45deg) translate(52%, 52%);
+  border: 3px solid #fff;
+}
+
+/*---------------*/
+
+.slide {
+  position: relative;
+  padding: 25vh 10%;
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  box-shadow: 0 -1px 10px rgba(0, 0, 0, .7);
+  transform-style: inherit;
+}
+
+.slide:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 8px 1px rgba(0, 0, 0, .7);
+}
+
+.title {
+  width: 70%;
+  padding: 5%;
+  border-radius: 5px;
+  background: rgba(240, 230, 220, .7);
+  box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+}
+
+.slide:nth-child(2n) .title {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.slide:nth-child(2n+1) .title {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.slide,
+.slide:before {
+  background: 50% 50% / cover;
+}
+
+.header {
+  text-align: center;
+  font-size: 1750%;
+  color: rgb(252, 248, 248);
+  text-shadow: 0 2px 2px #000;
+}
+
+#title {
+  background-image: url("image/banner.jpg");
+  z-index: 2;
+}
+
+#title h1 {
+  transform: translateZ(.25px) scale(.50);
+  transform-origin: 50% 100%;
+
+}
+
+#slide0 {
+  background-image: url("image/ai.png");
+  z-index: 2;
+}
+
+#slide1:before {
+  background-image: url("image/hello.jpg");
+  transform: translateZ(-1px) scale(2);
+}
+
+#slide2 {
+  background-image: url("image/jar.jpg");
+  z-index: 2;
+}
+
+#slide3:before {
+  background-image: url("image/jarv.jpg");
+  transform: translateZ(-1px) scale(2);
+}
+
+#slide4 {
+  background-image: url("image/TEAM.png");
+  z-index: 2;
+  background-size: cover;
+  height: 880px;
+}
+
+ul {
+  font-size: 20px;
+  line-height: 30px;
+  color: black;
+}
+
+
+footer{
+  /* margin-left: 50px; */
+  justify-content: space-between;
+  color: #fff;
+  margin-left: 150px;
+}
+.subscribe{
+  margin-left: 400px;
+  color: #fff;
+}
+
+.colormewhite{
+  color: #fff;
+}
+
+.nav a:active{
+  text-decoration: none;
+}
+
+hr{
+  border: 1px solid white;
+  margin-top: 40px;
+}
+

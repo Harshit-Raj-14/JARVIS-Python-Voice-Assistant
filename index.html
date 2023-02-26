@@ -6,89 +6,170 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JARVIS: Python Voice Assistant</title>
     <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/128/2814/2814726.png">
-    <meta name="description"
-        content="Quick, free, online all in one unit converter that converts common units of measurement, length, weight, temperature, currency converter.">
-    <meta name="keywords" content="online converter, weight, temperature, currency, converter">
+    <meta name="description" content="JARVIS : Python Voice Assistant">
+    <meta name="keywords" content="voice assistant, AI, JARVIS, python">
     <meta name="author" content="Medusaverse">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="J.A.R.V.I.S-frontend/style.css" />
 </head>
 
 <body>
-    <div class="fullContainer" id="homeSection">
-        <header>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-                    <img src="https://cdn-icons-png.flaticon.com/128/2814/2814666.png">
-                    <a class="navbar-brand">JARVIS: Python Voice Assistant</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page"
-                                    href="#">Get Started</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page"
-                                    href="#">Learn</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page"
-                                    href="#">How it Works</a>
-                            </li>
-                        </ul>
-                        <form class="d-flex" role="search">
-                            <button type="button" class="btn btn-primary">
-                                <svg width="16" height="16" fill="currentColor" class="bi bi-github"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z">
-                                    </path>
-                                </svg>
-                                <a href="https://github.com/Harshit-Raj-14/JARVIS-Python-Voice-Assistant">Source Code</a>
-                            </button>
-                            <button class="btn btn-outline-success" type="submit"><a
-                                    href="https://ko-fi.com/medusaverse">Support Us</a></button>
-                        </form>
-                    </div>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top sticky" id="navbar">
+            <div class="container-fluid">
+                <img src="https://cdn-icons-png.flaticon.com/128/2814/2814666.png">
+                <a class="navbar-brand">JARVIS: Python Voice Assistant</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#slide0">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#slide1">Get Started</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#slide2">Learn</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#slide3">How it Works</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <button type="button" class="btn btn-primary">
+                            <svg width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z">
+                                </path>
+                            </svg>
+                            <a href="https://github.com/Harshit-Raj-14/JARVIS-Python-Voice-Assistant"
+                                target="_blank">Source Code</a>
+                        </button>
+                        <button class="btn btn-outline-success" type="submit">
+                            <a href="https://ko-fi.com/medusaverse" target="_blank">Support Us</a></button>
+                    </form>
                 </div>
-            </nav>
-        </header>
-        <!-- header ends here -->
+            </div>
+        </nav>
+    </header>
+    <!-- header ends here -->
 
-
-        <div class="container banner">
-            <h1>Simplify Your Life with <span style="padding-top: 5px;">JARVIS</span></h1>
-            <p>Your Personal Voice Assistant Powered by Python
+    <div id="slide0" class="slide">
+        <div class="title heade">
+            <h1>Simplify Your Life with JARVIS</h1>
+            <p>Your Personal Smart AI Voice Assistant Powered by Python
             </p>
-            
-            <button>
+            <button class="buttons">
                 <a class="firstpledge" href="https://github.com/Harshit-Raj-14/JARVIS-Python-Voice-Assistant">
-                GET IT NOW
+                    GET IT NOW
                 </a>
             </button>
-        
         </div>
-     
     </div>
+
     <!-- homeSection ends here -->
 
+    <div id="slide1" class="slide">
+        <div class="title">
+            <h1>KNOW MORE</h1>
+            <p>JARVIS (Just A Rather Very Intelligent System) is a fictional artificial intelligence assistant created
+                by Marvel Comics and featured in the Iron Man comics and movies. JARVIS is the computer system that
+                helps Tony Stark (Iron Man) manage his technology and equipment, from his suit to his lab. JARVIS is
+                portrayed as an incredibly advanced and intelligent system, capable of natural language processing,
+                learning, and problem-solving. In the Marvel Cinematic Universe, JARVIS was portrayed as a
+                voice-activated assistant, voiced by actor Paul Bettany, before being transformed into the superhero
+                Vision.</p>
+        </div>
+    </div>
+
+    <div id="slide2" class="slide">
+        <div class="title">
+            <h1>APPLICATION</h1><br>
+            <ul>
+                <li>As JARVIS is a fictional AI assistant,it is a fictional AI assistant, it is not currently available
+                    as a real-world application. However, the concept of a sophisticated AI assistant like JARVIS has
+                    inspired many real-world developments in artificial intelligence and smart home technology.<br></li>
+                <br>
+
+                <li> In the real world, AI assistants like Siri, Google Assistant, and Alexa are examples of systems
+                    that use natural language processing and machine learning algorithms to understand and respond to
+                    user requests. These systems can perform a wide range of tasks, from answering questions and setting
+                    reminders to controlling smart home devices and playing music.<br></li><br>
+
+                <li> In addition, companies are exploring the potential for AI assistants in other areas, such as
+                    healthcare and customer service. For example, AI chatbots can be used to provide customer support
+                    and answer questions in real-time, freeing up human staff to focus on more complex tasks.<br></li>
+                <br>
+
+                <li>Overall, the concept of a sophisticated AI assistant like JARVIS has inspired many real-world
+                    applications and developments in artificial intelligence, smart home technology, and other
+                    areas.<br></li><br>
+            </ul>
+        </div>
+
+    </div>
+
+    <div id="slide3" class="slide">
+        <div class="title">
+            <h1>HOW IT WORKS</h1><br>
+            <ul>
+                <li>In the Iron Man comics and movies, JARVIS is depicted as an advanced artificial intelligence
+                    assistant that is capable of managing and controlling Tony Stark's high-tech equipment and
+                    systems.<br></li> <br>
+
+                <li>The specific workings of JARVIS are not explained in detail in the comics or movies, but it is
+                    suggested that the system uses a combination of natural language processing, machine learning, and
+                    advanced algorithms to understand and respond to Tony's commands and requests. JARVIS is able to
+                    interact with Tony using voice commands, and can also access and control other systems through a
+                    variety of interfaces, such as touchscreens and holographic displays.<br></li><br>
+
+                <li>JARVIS is also depicted as having a high level of intelligence and problem-solving abilities. He is
+                    able to analyze data, provide recommendations, and even make decisions on his own in certain
+                    situations. This intelligence is likely achieved through a combination of machine learning
+                    techniques, such as neural networks and deep learning algorithms, that enable JARVIS to learn and
+                    adapt to new situations and data over time.<br></li>
+            </ul>
+        </div>
+    </div>
 
 
-    <!-- About starts here -->
+    <div id="slide4" class="slide">
+    </div>
 
-    
-   
+    <hr>
+    <footer class="py-5">
 
+        <div class="row">
+            <div class="col-6 col-md-2 mb-3">
+                <ul class="nav flex-column colormewhite">
+                    <li class="nav-item mb-2"><a href="#slide0" class="nav-link p-0">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#slide1" class="nav-link p-0">Features</a></li>
+                    <li class="nav-item mb-2"><a href="#slide2" class="nav-link p-0">Application</a></li>
+                    <li class="nav-item mb-2"><a href="#slide3" class="nav-link p-0">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#slide4" class="nav-link p-0">About</a></li>
+                </ul>
+            </div>
+            <div class="col-md-5 offset-md-1 mb-3 subscribe">
+                <form>
+                    <h5>Subscribe to our newsletter</h5>
+                    <p style="color:white">Learn more about our AI and get the latest updates.</p>
+                    <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                        <label for="newsletter1" class="visually-hidden">Email address</label>
+                        <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                        <button class="btn btn-primary" type="button"><a href="https://www.youtube.com/@medusaverse"
+                                target="_blank">Subscribe</a></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </footer>
 
+    <script src="J.A.R.V.I.S-frontend/script.js"></script>
 
 </body>
 
