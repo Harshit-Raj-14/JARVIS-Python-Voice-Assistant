@@ -545,7 +545,7 @@ class MainThread(QThread):
         elif 'your age' in command:
             self.talk("I am good.")
         elif 'date' in command:
-            self.talk('Sorry can you please repeat')
+            self.talk(date.today().strftime("%b-%d-%Y"))
         elif 'are you single' in command:
             self.talk('No, I am in a relationship with wifi.')
         elif 'joke' in command:
@@ -983,8 +983,11 @@ class MainThread(QThread):
 
 startExecution = MainThread()
 class Main(QMainWindow):
-    cpath =""
-##############################################################
+    cpath =""   
+
+
+######################    GUI    ########################################
+
     def __init__(self,path):
         self.cpath = path
         super().__init__()
@@ -1006,8 +1009,6 @@ class Main(QMainWindow):
         webbrowser.open("https://web.whatsapp.com/")
 
 
-
-
     def startTask(self):
 
         self.ui.movie = QtGui.QMovie(rf"{self.cpath}\bg\ironmanwoo.gif")
@@ -1019,7 +1020,7 @@ class Main(QMainWindow):
         self.ui.movie = QtGui.QMovie(rf"{self.cpath}\extraGui\Earth.gif")
         self.ui.gif_4.setMovie(self.ui.movie)
         self.ui.movie.start()
-        self.ui.movie = QtGui.QMovie(rf"{self.cpath}\voiceReg\Aqua.gif")
+        self.ui.movie = QtGui.QMovie(rf"{self.cpath}\voiceReg\aqua.gif")
         self.ui.gif_3.setMovie(self.ui.movie)
         self.ui.movie.start()
         self.ui.movie = QtGui.QMovie(rf"{self.cpath}\bg\voicegrf.gif")
@@ -1038,12 +1039,7 @@ class Main(QMainWindow):
         self.ui.Text_Temperature.setText(temp)
         self.ui.Text_Day.setText(date.today().strftime("%A"))
         
-        
 
-        
-###################
-        
-#################################
         timer = QTimer(self)
         timer.timeout.connect(self.showTime)
         timer.start(1000)
@@ -1057,9 +1053,7 @@ class Main(QMainWindow):
         label_date = current_date.toString(Qt.ISODate)
         self.ui.Text_Date.setText(label_date)
         self.ui.Text_Time.setText(label_time)
-        
-        
-        
+            
 
 current_path = os.getcwd()
 app = QApplication(sys.argv)
