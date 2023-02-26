@@ -202,25 +202,20 @@ p {
   text-shadow: 0 2px 2px #000;
 }
 
-#title {
-  background-image: url("image/banner.jpg");
-  z-index: 2;
-}
-
 #title h1 {
   transform: translateZ(.25px) scale(.50);
   transform-origin: 50% 100%;
 
 }
 
-#slide0 {
+#slide0:before {
   background-image: url("image/ai.png");
-  z-index: 2;
+  transform: translateZ(-1px) scale(2);
 }
 
-#slide1:before {
+#slide1 {
   background-image: url("image/hello.jpg");
-  transform: translateZ(-1px) scale(2);
+  z-index: 2;
 }
 
 #slide2 {
