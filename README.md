@@ -103,15 +103,5 @@ Note: If you encounter any issues during these steps, you can reach out to the O
 5. Copy and paste the API Key in the code.
 
 
-## Contributors
-21BCG10006 - Harshit Raj
-
-21BCG10014 - Arin Goyal
-
-21BCG10033 - Pushkar Joshi
-
-21BCG10002 - Sudhir Venkatesh
-
-21BCG10009 - Praveen N Swamy
 
 
