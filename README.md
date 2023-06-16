@@ -103,5 +103,12 @@ Note: If you encounter any issues during these steps, you can reach out to the O
 5. Copy and paste the API Key in the code.
 
 
+## Contributing
+
+Contributions are welcome! If you have any suggestions, bug fixes, or new features to propose, please submit an issue or create a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
