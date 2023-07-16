@@ -228,13 +228,6 @@ p {
   transform: translateZ(-1px) scale(2);
 }
 
-#slide4 {
-  background-image: url("image/TEAM.png");
-  z-index: 2;
-  background-size: cover;
-  height: 880px;
-}
-
 ul {
   font-size: 20px;
   line-height: 30px;
