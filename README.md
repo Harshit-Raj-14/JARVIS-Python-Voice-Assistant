@@ -106,9 +106,17 @@ Note: If you encounter any issues during these steps, you can reach out to the O
 ## Contributing
 
 Contributions are welcome! If you have any suggestions, bug fixes, or new features to propose, please submit an issue or create a pull request.
+**How to contribute**
+
+* Fork the repo in your github by clicking on the fork button.
+* Git clone it in your local system. Make appropriate changes.
+* Make a pull request.
+
+**Where can you contribute?**
+I have already made some good first issues and easy issues in the issue section. You can start contributing from there. You can also add new fucntionality to our JARVIS nad make it more smart.😎
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+This project is licensed under the [MIT License](LICENSE).    [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
