@@ -57,7 +57,8 @@ a:active {
 nav {
   height: 60px;
   padding-bottom: 15px;
-  position: fixed !important;;
+  position: fixed !important;
+  ;
   top: 0;
   width: 100%;
   margin-top: 0;
@@ -65,8 +66,9 @@ nav {
 
 }
 
-.btn{
-  margin-right: 15px;;
+.btn {
+  margin-right: 15px;
+  ;
 }
 
 .buttons {
@@ -88,7 +90,7 @@ img {
   margin-right: 15px;
 }
 
-.heade p{
+.heade p {
   margin-top: 30px;
   margin-bottom: 30px;
   width: 58%;
@@ -137,7 +139,7 @@ p {
 }
 
 .sectionTitle::after {
-  /*its for the triangle in between the underline of about us  */
+  /* its for the triangle in between the underline of about us */
   display: inline-block;
   content: "";
   height: 15px;
@@ -235,27 +237,27 @@ ul {
 }
 
 
-footer{
-  /* margin-left: 50px; */
+footer {
+  margin-top: 500px;
   justify-content: space-between;
   color: #fff;
   margin-left: 150px;
 }
-.subscribe{
+
+.subscribe {
   margin-left: 400px;
   color: #fff;
 }
 
-.colormewhite{
+.colormewhite {
   color: #fff;
 }
 
-.nav a:active{
+.nav a:active {
   text-decoration: none;
 }
 
-hr{
+hr {
   border: 1px solid white;
   margin-top: 40px;
 }
-
