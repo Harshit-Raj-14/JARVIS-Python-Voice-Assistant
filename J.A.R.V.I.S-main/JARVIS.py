@@ -1,9 +1,9 @@
+# Importing necessary modules
 import sys
 from sys import exit
 import speech_recognition as sr
 import pyttsx3
 import pywhatkit
-import pywhatkit as kit
 import datetime
 import wikipedia
 import pyjokes
@@ -26,9 +26,8 @@ import numpy as np
 from PhoneNumer import Phonenumber_location_tracker
 from bs4 import BeautifulSoup
 from PyQt5 import QtWidgets, QtCore, QtGui
-from PyQt5.QtCore import QTimer,QTime,QDate,Qt
-from PyQt5.QtGui import QMovie
-from PyQt5.QtGui import *
+from PyQt5.QtCore import QTimer, QTime, QDate, Qt
+from PyQt5.QtGui import QMovie, QImage
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 from PyQt5.uic import loadUiType
@@ -40,41 +39,46 @@ from requests import get
 import smtplib
 import psutil
 from datetime import datetime as date
-from state import state
-import cv2
-import random
-from requests import get
-import smtplib
-import psutil
 
+
+# Initializing text-to-speech engine
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
-engine.setProperty('voice',voices[0].id) 
+engine.setProperty('voice', voices[0].id)
 
+
+# Importing required libraries
+import speech_recognition as sr
+from PyQt5.QtCore import QThread
+
+# Custom QThread class for running the main functionality in a separate thread
 class MainThread(QThread):
     def __init__(self):
-        super(MainThread,self).__init__()
+        super(MainThread, self).__init__()
 
+    # Overridden run method to execute the thread
     def run(self):
-        self.Intro()
+        self.Intro()  # Call the Intro method when the thread starts
 
+    # Method to listen and recognize user's speech command
     def take_Command(self):
         try:
             listener = sr.Recognizer()
             with sr.Microphone() as source:
 
                 print('Listening....')
-                listener.pause_threshold = 1
-                voice = listener.listen(source,timeout=4,phrase_time_limit=7)
+                listener.pause_threshold = 1  # Set pause threshold for speech recognition
+                voice = listener.listen(source, timeout=4, phrase_time_limit=7)  # Listen for user's voice
                 print("Recognizing...")
-                command1 = listener.recognize_google(voice,language='en-in')
-                command1 = command1.lower()  
-                if 'jarvis' in command1: 
-                    command1 = command1.replace('jarvis','')
+                command1 = listener.recognize_google(voice, language='en-in')  # Convert voice to text using Google's speech recognition
+                command1 = command1.lower()  # Convert the recognized text to lowercase for easier processing
 
-            return command1
+                if 'jarvis' in command1:  # Check if the command contains the word 'jarvis'
+                    command1 = command1.replace('jarvis', '')  # Remove 'jarvis' from the command for better accuracy
+
+            return command1  # Return the recognized command
         except:
-            return 'None'
+            return 'None'  # Return 'None' if there was an error during speech recognition
 
     def run_jarvis(self):
         self.wish()
